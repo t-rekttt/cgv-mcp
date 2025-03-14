@@ -1,0 +1,11 @@
+[project]
+name = "cgv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.4.0",
+    "pydantic>=2.10.6",
+    "requests>=2.32.3",
+]
