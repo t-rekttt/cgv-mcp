@@ -317,6 +317,6 @@ def get_profile(profile_id: str, access_token: str) -> dict:
         "X-Device": X_DEVICE
     }).json()
 
-if __name__ == "__main__":
+def serve():
     # Initialize and run the server
     mcp.run(transport='stdio')
