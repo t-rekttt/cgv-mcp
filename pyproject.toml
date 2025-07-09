@@ -14,4 +14,4 @@ dependencies = [
 py-modules = []
 
 [project.scripts]
-cgv-mcp = "src:serve"
+cgv-mcp = "cgv-mcp:serve"
