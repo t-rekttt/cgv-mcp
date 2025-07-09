@@ -4,7 +4,7 @@ from mcp.server.fastmcp import FastMCP
 import hmac
 import base64
 import hashlib
-from models import *
+from .models import *
 
 # Initialize FastMCP server
 mcp = FastMCP("CGV")
