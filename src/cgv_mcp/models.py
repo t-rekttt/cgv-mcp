@@ -284,7 +284,7 @@ class VNPayInfo(BaseModel):
     Tmn_code: str
 
 class BookOrderResponse(BaseModel):
-    data: dict[str, Any]
+    data: Dict[str, Any]
     order_id: str
     payment_method: str
     info_vnpay: VNPayInfo | None = None
