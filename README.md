@@ -1,4 +1,4 @@
-# CGV Cinema API Client
+# CGV Cinema API MCP Server
 
 A Python client for interacting with CGV Cinema's mobile API. This client provides functionality to access movie listings, cinema locations, seat maps, and booking capabilities.
 
