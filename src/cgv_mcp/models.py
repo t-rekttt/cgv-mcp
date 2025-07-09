@@ -109,12 +109,12 @@ class Movie(BaseModel):
     rating_icon: str
     languages: List[Language]
 
-class Schedule(BaseModel):
+class CinemaSchedule(BaseModel):
     date: str
     movies: List[Movie]
 
 class CinemaScheduleResponse(BaseModel):
-    data: List[Schedule]
+    data: List[CinemaSchedule]
 
 class Special(BaseModel):
     title: str
@@ -123,7 +123,7 @@ class Special(BaseModel):
     small_image: str
     main_image: str
 
-class Cinema(BaseModel):
+class CinemaDetail(BaseModel):
     id: str
     code: str
     name: str
@@ -135,7 +135,7 @@ class Cinema(BaseModel):
 
 class CityGroup(BaseModel):
     name: str
-    cinemas: List[Cinema]
+    cinemas: List[CinemaDetail]
 
 class CinemaListResponse(BaseModel):
     data: List[CityGroup]
@@ -170,7 +170,7 @@ class LoginData(BaseModel):
     email: str
     referral_code: str
     gender: str
-    info_grades: list
+    info_grades: List[Any]
     avatar: str
     is_u22: int
     remain_refund: int
@@ -271,12 +271,12 @@ class AddTicketResponse(BaseModel):
 
 class InfoCompound(BaseModel):
     info_admission_cards: str = ""
-    info_discounts: dict = {}
-    info_vouchers: list = []
+    info_discounts: Dict[str, Any] = {}
+    info_vouchers: List[Any] = []
     info_points: str = ""
     info_gift_cards: str = ""
     info_gift_cards_new: str = ""
-    info_combo: dict = {}
+    info_combo: Dict[str, Any] = {}
     info_partner_ship: str = ""
 
 class VNPayInfo(BaseModel):
@@ -305,8 +305,9 @@ class ExtraDataConcessionResponse(BaseModel):
     type: int
     remaining_concession: int
 
+class ConcessionData(BaseModel):
+    banner: Optional[str] = None
+    concession: List[ExtraDataConcessionResponse]
+
 class ConcessionResponse(BaseModel):
-    data: dict[str, Any] = {
-        "banner": str | None,
-        "concession": List[ExtraDataConcessionResponse]
-    } 
+    data: ConcessionData
